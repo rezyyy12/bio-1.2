@@ -28,5 +28,12 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
-
 draw();
+
+document.querySelectorAll(".more-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const block = document.getElementById(btn.dataset.target);
+        block.classList.toggle("hidden");
+        btn.textContent = block.classList.contains("hidden") ? "more" : "less";
+    });
+});
