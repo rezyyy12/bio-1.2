@@ -1,36 +1,106 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rezy — Bio</title>
+    <title>rezyyy — bio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="bg"></canvas>
 
     <div class="container">
-        <h1 class="title">Rezy</h1>
-        <p class="subtitle">кодер, который пишет так, чтобы оно жило</p>
 
+        <h1 class="title">rezyyy</h1>
+
+        <div class="tags fade">
+            <span>python</span>
+            <span>javascript</span>
+            <span>web</span>
+            <span>ai</span>
+            <span>creative coding</span>
+        </div>
+
+        <h2 class="section-title fade">about</h2>
         <div class="bio-block fade">
             <p>
-                Делаю вещи проще, чем они устроены.  
-                Предпочитаю тёмные интерфейсы, чистую архитектуру и код, который приятно открывать спустя годы.  
-                Telegram: <a href="https://t.me/the_rezyyy" target="_blank">@the_rezyyy</a>
+                tg: <a href="https://t.me/the_rezyyy" target="_blank">@the_rezyyy</a>
             </p>
         </div>
 
-        <div class="tags fade">
-            <span>Python</span>
-            <span>JavaScript</span>
-            <span>Web</span>
-            <span>AI</span>
-            <span>Creative coding</span>
+        <h2 class="section-title fade">skills</h2>
+        <div class="skill-block fade">
+            <p>40+ languages</p>
+
+            <ul class="list" id="know-list">
+                <li>c/c++</li>
+                <li>rust</li>
+                <li>go</li>
+                <li>zig</li>
+                <li>assembly (x86/arm)</li>
+
+                <div id="more-know" class="hidden">
+                    <li>haskell</li>
+                    <li>ocaml</li>
+                    <li>erlang/elixir</li>
+                    <li>scala</li>
+                    <li>clojure</li>
+                    <li>prolog</li>
+                    <li>coq</li>
+                    <li>idris</li>
+                    <li>lean</li>
+                    <li>fortran</li>
+                    <li>ada</li>
+                    <li>nim</li>
+                    <li>crystal</li>
+                    <li>d</li>
+                    <li>v</li>
+                    <li>carbon</li>
+                    <li>mojo</li>
+                    <li>solidity</li>
+                    <li>move</li>
+                    <li>cairo</li>
+                    <li>lua</li>
+                    <li>malbolge</li>
+                </div>
+            </ul>
+
+            <button class="more-btn" data-target="more-know">more</button>
+        </div>
+
+        <h2 class="section-title fade">specialization</h2>
+        <div class="skill-block fade">
+            <ul class="list">
+                <li>low level</li>
+                <li>reverse engineering</li>
+                <li>exploits</li>
+                <li>kernel dev</li>
+                <li>cryptography</li>
+
+                <div id="more-spec" class="hidden">
+                    <li>highload systems</li>
+                    <li>parsers / bots</li>
+                    <li>blockchain (sol / ton / evm)</li>
+                </div>
+            </ul>
+
+            <button class="more-btn" data-target="more-spec">more</button>
+        </div>
+
+        <h2 class="section-title fade">code</h2>
+        <div class="code-block fade">
+<pre><code>while (true) {
+    task = get_task();
+    if (task.is_boring()) continue;
+    if (task.rate &lt; expected_rate) reject(task);
+    solve(task);
+}
+</code></pre>
         </div>
 
         <footer class="fade">
-            <p>Minimal Dark. Maximum Presence.</p>
+            <p>minimal dark. maximum presence.</p>
         </footer>
+
     </div>
 
     <script src="script.js"></script>
