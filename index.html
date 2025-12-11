@@ -1,108 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>rezyyy — bio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>rezyyy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        margin: 0;
+        background: #0d0d0d;
+        color: #e5e5e5;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 780px;
+        background: #111;
+        border: 1px solid #1b1b1b;
+        padding: 40px;
+        border-radius: 14px;
+        box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        animation: fade 0.5s ease;
+    }
+
+    @keyframes fade { from { opacity:0 } to { opacity:1 } }
+
+    h1 {
+        margin: 0 0 20px;
+        font-size: 44px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        text-transform: lowercase;
+    }
+
+    .section-title {
+        margin: 35px 0 12px;
+        font-size: 20px;
+        font-weight: 500;
+        opacity: .7;
+        text-transform: lowercase;
+    }
+
+    .list, .code-block {
+        background: #0b0b0b;
+        border: 1px solid #1a1a1a;
+        border-radius: 10px;
+        padding: 18px 20px;
+        font-size: 15px;
+        line-height: 1.55;
+        overflow: hidden;
+        position: relative;
+        max-height: 140px;
+        transition: max-height .35s ease;
+    }
+
+    .list.expanded {
+        max-height: 900px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        background: #151515;
+        border: 1px solid #272727;
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        text-transform: lowercase;
+        transition: background .2s, border .2s;
+    }
+
+    .btn:hover {
+        background: #1f1f1f;
+        border-color: #3a3a3a;
+    }
+
+    .tagline {
+        font-size: 18px;
+        opacity: .85;
+        margin-top: -10px;
+        margin-bottom: 30px;
+        text-transform: lowercase;
+    }
+
+    pre {
+        margin: 0;
+        font-size: 14px;
+        font-family: "JetBrains Mono", monospace;
+        color: #c9c9c9;
+    }
+</style>
 </head>
 <body>
-    <canvas id="bg"></canvas>
 
-    <div class="container">
+<div class="card">
 
-        <h1 class="title">rezyyy</h1>
+    <h1>rezyyy</h1>
+    <div class="tagline">writes code that refuses to die</div>
 
-        <div class="tags fade">
-            <span>python</span>
-            <span>javascript</span>
-            <span>web</span>
-            <span>ai</span>
-            <span>creative coding</span>
-        </div>
+    <div class="section-title">stack</div>
+    <div class="list" id="list-stack">
+        40+ languages in pocket, including 35 that scare juniors to tears<br><br>
 
-        <h2 class="section-title fade">about</h2>
-        <div class="bio-block fade">
-            <p>
-                tg: <a href="https://t.me/the_rezyyy" target="_blank">@the_rezyyy</a>
-            </p>
-        </div>
+        stack:<br>
+        c/c++<br>
+        rust<br>
+        go<br>
+        zig<br>
+        assembly (x86/arm)<br>
+        haskell<br>
+        ocaml<br>
+        erlang/elixir<br>
+        scala<br>
+        clojure<br>
+        prolog<br>
+        coq<br>
+        idris<br>
+        lean<br>
+        fortran<br>
+        ada<br>
+        nim<br>
+        crystal<br>
+        d<br>
+        v<br>
+        carbon<br>
+        mojo<br>
+        solidity<br>
+        move<br>
+        cairo<br>
+        lua<br>
+        malbolge (if you really insist)
+    </div>
+    <button class="btn" onclick="toggle('list-stack', this)">more</button>
 
-        <h2 class="section-title fade">skills</h2>
-        <div class="skill-block fade">
-            <p>40+ languages</p>
+    <div class="section-title">specialization</div>
+    <div class="list" id="list-spec">
+        low level<br>
+        reverse engineering<br>
+        exploits<br>
+        kernel dev<br>
+        cryptography<br>
+        highload systems<br>
+        parsers / bots<br>
+        blockchain (sol/ton/evm)
+    </div>
+    <button class="btn" onclick="toggle('list-spec', this)">more</button>
 
-            <ul class="list" id="know-list">
-                <li>c/c++</li>
-                <li>rust</li>
-                <li>go</li>
-                <li>zig</li>
-                <li>assembly (x86/arm)</li>
-
-                <div id="more-know" class="hidden">
-                    <li>haskell</li>
-                    <li>ocaml</li>
-                    <li>erlang/elixir</li>
-                    <li>scala</li>
-                    <li>clojure</li>
-                    <li>prolog</li>
-                    <li>coq</li>
-                    <li>idris</li>
-                    <li>lean</li>
-                    <li>fortran</li>
-                    <li>ada</li>
-                    <li>nim</li>
-                    <li>crystal</li>
-                    <li>d</li>
-                    <li>v</li>
-                    <li>carbon</li>
-                    <li>mojo</li>
-                    <li>solidity</li>
-                    <li>move</li>
-                    <li>cairo</li>
-                    <li>lua</li>
-                    <li>malbolge</li>
-                </div>
-            </ul>
-
-            <button class="more-btn" data-target="more-know">more</button>
-        </div>
-
-        <h2 class="section-title fade">specialization</h2>
-        <div class="skill-block fade">
-            <ul class="list">
-                <li>low level</li>
-                <li>reverse engineering</li>
-                <li>exploits</li>
-                <li>kernel dev</li>
-                <li>cryptography</li>
-
-                <div id="more-spec" class="hidden">
-                    <li>highload systems</li>
-                    <li>parsers / bots</li>
-                    <li>blockchain (sol / ton / evm)</li>
-                </div>
-            </ul>
-
-            <button class="more-btn" data-target="more-spec">more</button>
-        </div>
-
-        <h2 class="section-title fade">code</h2>
-        <div class="code-block fade">
-<pre><code>while (true) {
+    <div class="section-title">runtime</div>
+    <div class="code-block">
+<pre>
+while (true) {
     task = get_task();
     if (task.is_boring()) continue;
-    if (task.rate &lt; expected_rate) reject(task);
+    if (task.rate < expected_rate) reject(task);
     solve(task);
 }
-</code></pre>
-        </div>
-
-        <footer class="fade">
-            <p>minimal dark. maximum presence.</p>
-        </footer>
-
+</pre>
     </div>
 
-    <script src="script.js"></script>
+    <div class="section-title">contact</div>
+    <div class="list" style="max-height: none;">
+        telegram: <a href="https://t.me/the_rezyyy" style="color:#7ab0ff;">@the_rezyyy</a>
+    </div>
+
+</div>
+
+<script>
+function toggle(id, btn) {
+    const el = document.getElementById(id);
+    el.classList.toggle("expanded");
+    btn.textContent = el.classList.contains("expanded") ? "less" : "more";
+}
+</script>
+
 </body>
 </html>
